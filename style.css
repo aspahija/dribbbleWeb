@@ -21,14 +21,70 @@ body {
   background-color: black;
 }
 
-#logo {
+.navbar #logo {
   font-family: Pacifico;
   font-size: 10px;
   color: white;
 }
 
-#user {
+.navbar #user {
   float: right;
+}
+
+.search {
+  padding: 20px;
+  margin: 10px 0px;
+}
+
+.search ul {
+  list-style-type: none;
+  color: #555555;
+  margin: 0;
+  padding: 0;
+}
+
+.search ul li {
+  display: inline-block;
+}
+
+.search #search-title {
+  float: left;
+  font-size: 24px;
+}
+
+.search #tags {
+  float: right;
+}
+
+.blue {
+  color:dodgerblue;
+}
+
+.results {
+  padding: 10px 20px;
+}
+
+.results ul {
+  list-style-type: none;
+  color: #555555;
+  margin: 0;
+  padding: 0;
+}
+
+.results ul li {
+  display: inline-block;
+}
+
+.results #results-title {
+  float: left;
+}
+
+.results #sort {
+  float: right;
+}
+
+.break hr {
+  margin: 20px 10px;
 }
 
 @media screen and (max-width: 600px) {
