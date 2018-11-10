@@ -44,7 +44,7 @@
       <ul>
         <li class="box">
           <div class="frame">
-            <img src="img/website1.jpg">
+            <img src="img/website1.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
             <ul class="icon-group">
               <li><i class="fas fa-eye"></i> 12</li>
               <li><i class="fas fa-comment"></i> 0</li>
@@ -58,7 +58,7 @@
 
         <li class="box">
           <div class="frame">
-            <img src="img/website2.jpg">
+            <img src="img/website2.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
             <ul class="icon-group">
               <li><i class="fas fa-eye"></i> 4</li>
               <li><i class="fas fa-comment"></i> 1</li>
@@ -72,7 +72,7 @@
 
         <li class="box">
           <div class="frame">
-            <img src="img/website3.jpg">
+            <img src="img/website3.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
             <ul class="icon-group">
               <li><i class="fas fa-eye"></i> 9</li>
               <li><i class="fas fa-comment"></i> 0</li>
@@ -86,7 +86,7 @@
 
         <li class="box">
           <div class="frame">
-            <img src="img/website4.jpg">
+            <img src="img/website4.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
             <ul class="icon-group">
               <li><i class="fas fa-eye"></i> 7</li>
               <li><i class="fas fa-comment"></i> 0</li>
@@ -100,7 +100,7 @@
 
         <li class="box">
           <div class="frame">
-            <img src="img/website5.jpg">
+            <img src="img/website5.jpg" onclick="openModal();currentSlide(5)" class="hover-shadow">
             <ul class="icon-group">
               <li><i class="fas fa-eye"></i> 17</li>
               <li><i class="fas fa-comment"></i> 4</li>
@@ -114,7 +114,7 @@
 
         <li class="box">
           <div class="frame">
-            <img src="img/website6.jpg">
+            <img src="img/website6.jpg" onclick="openModal();currentSlide(6)" class="hover-shadow">
             <ul class="icon-group">
               <li><i class="fas fa-eye"></i> 2</li>
               <li><i class="fas fa-comment"></i> 0</li>
@@ -128,6 +128,93 @@
       </ul>
       
     </div>
+    
+    <!-- The Modal/Lightbox -->
+    <div id="myModal" class="modal">
+      <span class="close cursor" onclick="closeModal()">&times;</span>
+      <div class="modal-content">
+
+        <div class="mySlides">
+          <img src="img/website1.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <img src="img/website2.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <img src="img/website3.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <img src="img/website4.jpg" style="width:100%">
+        </div>
+        
+        <div class="mySlides">
+          <img src="img/website5.jpg" style="width:100%">
+        </div>
+        
+        <div class="mySlides">
+          <img src="img/website6.jpg" style="width:100%">
+        </div>
+
+        <!-- Next/previous controls -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+      </div>
+    </div>
+    
+    <!-- The Modal/Lightbox Script -->
+    <script>
+      // Open the Modal
+      function openModal() {
+        document.getElementById('myModal').style.display = "block";
+      }
+
+      // Close the Modal
+      function closeModal() {
+        document.getElementById('myModal').style.display = "none";
+      }
+
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      // Next/previous controls
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+
+      // Thumbnail image controls
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+      }
+      
+      function leftArrowPressed() {
+        showSlides(slideIndex += n); 
+      }
+
+      function rightArrowPressed() {
+        showSlides(slideIndex += n);
+      }
+    </script>
     
   </body>
   
