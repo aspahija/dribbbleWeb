@@ -88,13 +88,20 @@ body {
   margin: 20px 10px;
 }
 
+.main ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 .box {
   width: 250px;
   height: 230px;
   margin: 20px 30px;
+  display: inline-block;
 }
 
-.frame {
+.box .frame {
   background-color: white;
   width: 250px;
   height: 200px;
