@@ -88,6 +88,11 @@ body {
   margin: 20px 10px;
 }
 
+.main {
+  width: 950px;
+  margin: 0 auto;
+}
+
 .main ul {
   list-style-type: none;
   margin: 0;
@@ -136,12 +141,17 @@ body {
   padding: 5px;
 }
 
-@media screen and (max-width: 600px) {
-  .navbar a {
-    float: none;
-    display: block;
+@media screen and (max-width: 1024px) {
+  .main {
+    width: 650px;
   }
-  #user {
-    float: none;
+}
+
+@media screen and (max-width: 640px) {
+  .navbar .menu-items {
+    display: none;
+  }
+  .main {
+    width: 300px;
   }
 }
